@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -40,6 +41,9 @@ public class Address {
 	
 	@Lob
 	private  byte[] image;
+	
+	@OneToOne(mappedBy="address")
+	private Student student;
 
 	public Address() {
 		super();

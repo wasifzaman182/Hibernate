@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Student {
@@ -14,11 +16,18 @@ public class Student {
 
 	private String name;
 	private String city;
-	public Student(int id, String name, String city) {
+	
+	@OneToOne
+	@JoinColumn(name="add_id")
+	private Address address;
+	
+
+	public Student(int id, String name, String city, Address address) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.city = city;
+		this.address = address;
 	}
 	public Student() {
 		super();
@@ -41,6 +50,12 @@ public class Student {
 	}
 	public void setCity(String city) {
 		this.city = city;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 	
 	
