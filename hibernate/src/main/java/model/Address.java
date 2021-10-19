@@ -14,6 +14,15 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="student_address")
 public class Address {
@@ -45,64 +54,6 @@ public class Address {
 	@OneToOne(mappedBy="address")
 	private Student student;
 
-	public Address() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public Address(int addressId, String street, String city, boolean isOpen, double x, Date addedDate, byte[] image) {
-		super();
-		this.addressId = addressId;
-		this.street = street;
-		this.city = city;
-		this.isOpen = isOpen;
-		this.x = x;
-		this.addedDate = addedDate;
-		this.image = image;
-	}
-	public int getAddressId() {
-		return addressId;
-	}
-	public void setAddressId(int addressId) {
-		this.addressId = addressId;
-	}
-	public String getStreet() {
-		return street;
-	}
-	public void setStreet(String street) {
-		this.street = street;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public boolean isOpen() {
-		return isOpen;
-	}
-	public void setOpen(boolean isOpen) {
-		this.isOpen = isOpen;
-	}
-	public double getX() {
-		return x;
-	}
-	public void setX(double x) {
-		this.x = x;
-	}
-	public Date getAddedDate() {
-		return addedDate;
-	}
-	public void setAddedDate(Date addedDate) {
-		this.addedDate = addedDate;
-	}
-	public byte[] getImage() {
-		return image;
-	}
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
-	
-	
-	
+		
 
 }

@@ -1,12 +1,24 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Student {
 
@@ -21,43 +33,7 @@ public class Student {
 	@JoinColumn(name="add_id")
 	private Address address;
 	
+	@OneToMany(mappedBy="student")
+	private List<Subjects> subjects;
 
-	public Student(int id, String name, String city, Address address) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.city = city;
-		this.address = address;
-	}
-	public Student() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-	
-	
-	
 }

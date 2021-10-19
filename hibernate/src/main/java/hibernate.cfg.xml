@@ -16,6 +16,7 @@
 		<property name="hbm2ddl.auto">create</property>
 		<mapping class="model.Student"/>
 		<mapping class="model.Address"/>
+		<mapping class="model.Subjects"/>
 
 	</session-factory>
 </hibernate-configuration>
