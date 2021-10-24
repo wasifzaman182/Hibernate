@@ -1,0 +1,5 @@
+package manyToManyRelation;
+
+public class Movies {
+
+}

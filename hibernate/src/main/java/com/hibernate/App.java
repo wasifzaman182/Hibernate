@@ -2,8 +2,6 @@ package com.hibernate;
 
 
 
-import java.io.FileInputStream;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -58,7 +56,7 @@ public class App
         List<Subjects> studentList = new ArrayList<Subjects>();
         studentList.add(sujects);
         studentList.add(subjects1);
-        s1.setSubjects(studentList);
+       // s1.setSubjects(studentList);
         
         
         Address ad1 = new Address();
